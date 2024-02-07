@@ -18,11 +18,91 @@ envoltorio.addEventListener("click", () => {
 });
 
 // EVENTO PARA ELEJIR ENTRE LAS TRES OPCIONES
-
 let tableroJuego = document.getElementById("tableroJuego");
+let eleccionCliente = document.getElementById("eleccionCliente");
+let eleccionCPU = document.getElementById("eleccionCPU");
+let botonJugar = document.getElementById("botonJugar");
+let resultado = document.getElementById("resultado");
+
+const rutaPapel = "../img/paper.png";
+const rutaRoca = "../img/rock.png";
+const rutaTijeras = "../img/scissors.png";
+
 
 tableroJuego.addEventListener("click", (e) => {
   if(e.target.id && e.target.id != "tableroJuego"){
-    console.log(e.target.id);
+
+    // LA OPCIÓN QUE PULSE SE PONE EN LA OPCION DEL CLIENTE
+    if(e.target.id == "papelCliente"){
+      eleccionCliente.src = rutaPapel;
+    }
+
+    if(e.target.id == "rocaCliente"){
+      eleccionCliente.src = rutaRoca;
+    }
+
+    if(e.target.id == "tijerasCliente"){
+      eleccionCliente.src = rutaTijeras;
+    }
   }
 })
+
+// OPCION ALEATORIA DEL CPU
+botonJugar.addEventListener("click", (e)=> {
+  
+  if(eleccionCliente.src){
+
+    botonJugar.style.display = "none";
+    var numAleatorio = Math.floor(Math.random() * 3 + 1);
+
+    if(numAleatorio == 1){
+      eleccionCPU.src = rutaPapel;
+    }else if(numAleatorio == 2){
+      eleccionCPU.src = rutaRoca;
+    }else {
+      eleccionCPU.src = rutaTijeras;
+    }
+
+    //COMPROBAMOS AMBAS ELECCIONES
+
+    // SI SACA PAPEL LA CPU
+    if(eleccionCPU.src == rutaPapel && eleccionCliente.src == rutaPapel) {
+      resultado.style.display = "block";
+      resultado.innerText = "Empate técnico! Nadie pierde vida!";
+    }else if(eleccionCPU.src == rutaPapel && eleccionCliente.src == rutaRoca) {
+      resultado.style.display = "block";
+      resultado.innerText = "Gana la CPU, pierdes una vida!"
+    }else if(eleccionCPU.src == rutaPapel && eleccionCliente.src == rutaTijeras){
+      resultado.style.display = "block";
+      resultado.innerText = "Ganaste el duelo, CPU pierde una vida!"
+    }
+
+    // SI SACA ROCA LA CPU
+    if(eleccionCPU.src == rutaRoca && eleccionCliente.src == rutaPapel){
+      resultado.style.display = "block";
+      resultado.innerText = "Ganaste el duelo, CPU pierde una vida!"
+    }else if(eleccionCPU.src == rutaRoca && eleccionCliente.src == rutaRoca){
+      resultado.style.display = "block";
+      resultado.innerText = "Empate técnico! Nadie pierde vida!"
+    }else if(eleccionCPU.src == rutaRoca && eleccionCliente.src == rutaTijeras){
+      resultado.style.display = "block";
+      resultado.innerText = "Gana la CPU, pierdes una vida!"
+    }
+
+    if(eleccionCPU.src == rutaTijeras && eleccionCliente.src == rutaPapel){
+      resultado.style.display = "block";
+      resultado.innerText = "Gana la CPU, pierdes una vida!"
+    }else if(eleccionCPU.src == rutaTijeras && eleccionCliente.src == rutaRoca){
+      resultado.style.display = "block";
+      resultado.innerText = "Ganaste el duelo, CPU pierde una vida!"
+    }else if(eleccionCPU.src == rutaTijeras && eleccionCliente.src == rutaTijeras){
+      resultado.style.display = "block";
+      resultado.innerText = "Empate técnico! Nadie pierde vida!"
+    }
+
+
+  }else{
+  }
+
+});
+    

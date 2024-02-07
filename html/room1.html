@@ -15,22 +15,25 @@
   <body>
     <header>
       <div class="row">
-          <div class="col-12 mt-4">
-              <h1 class="title">Escape Room DWEC 23-24 ➟ Primera sala: Piedra Papel Tijeras</h1>
+          <div class="col-11 mt-4">
+              <h1 class="title">Primera sala: Piedra Papel Tijeras</h1>
+          </div>
+          <div class="col-1">
+              <button class="btn btn-primary zoom"><a href="../html/index.html">Home</a></button>           
           </div>
       </div>
     </header>
     <main>
       <div id="tableroJuego" class="tablero">
-        <div class="row mt-3 primeraFila">
+        <div class="row mt-3 texto">
           <div class="col-3">
             Tus opciones
           </div>
           <div class="col-3">
-            Tu elección
+            Tus vidas: <span id="vidasCliente">3</span>
           </div>
           <div class="col-3">
-            Elección CPU
+            Vidas CPU: <span id="vidasCPU">3</span>
           </div>
           <div class="col-3">
             Elecciones CPU
@@ -53,10 +56,16 @@
           <div class="col-3">
             <img src="../img/rock.png" id="rocaCliente" alt="" class="zoom">
           </div>
-          <div class="col-3">
+          <div class="texto col-3">
+            <div>
+              Tu elección
+            </div>
             <img id="eleccionCliente" />
           </div>
-          <div class="col-3">
+          <div class="texto col-3">
+            <div>
+              Elección CPU
+            </div>
             <img id="eleccionCPU" />
           </div>
           <div class="col-3">
@@ -74,6 +83,18 @@
           </div>
           <div class="col-3">
             <img class="zoom" src="../img/scissors.png" alt="">
+          </div>
+        </div>
+
+        <div class="row">
+          <div id="resultado" class="col-12 mb-4 resultado">
+            Hola
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 containerJugar">
+            <button class="zoom btn btn-primary" id="botonJugar">Jugar!</button>
           </div>
         </div>
 
