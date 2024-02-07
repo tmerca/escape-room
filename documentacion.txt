@@ -1,0 +1,12 @@
+Dia 23:
+Empiezo el proyecto y empiezo la primera sala (piedra papel tijera), creo el tablero, elijo las imagenes
+
+Dia 24:
+Tema estético dejo todo listo y el popup preparado, falta que el juego funcione
+
+Dia 29:
+Ya comprueba el resultado del duelo y muestra el mensaje correspondiente, falta que sume o reste vidas y se ponga el color de la letra que toca
+
+Dia 31:
+He creado las paginas de registro e inicio de sesion y iniciado el Local Storage y Session Storage. Cuando el usuario se registra automaticamente le inicia la sesión
+

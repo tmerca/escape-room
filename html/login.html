@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/login.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="row">
+          <div class="col-9 mt-4">
+              <h1 class="title">Escape Room DWEC 2023-2024</h1>
+          </div>
+          <div class="col-1">
+              <button class="btn btn-primary zoom"><a href="index.html">Home</a></button>
+          </div>
+          <div class="col-1">
+              <button class="btn btn-primary zoom"><a href="login.html">Log In</a></button>
+          </div>
+          <div class="col-1">
+              <button class="btn btn-primary zoom"><a href="register.html">Register</a></button>
+          </div>
+      </div>
+  </header>
+    <main>
+      <div class="logInForm">
+        <div class="logInTitle">
+            <h3>Log In Form</h3>
+        </div>
+        <div class="labelForm">
+            <label for="useremail">Correo electrónico:</label>
+            <input type="email" name="" id="useremail">
+          </div>
+          <div class="labelForm">
+            <label for="userpwd">Contraseña:</label>
+            <input type="password" name="" id="userpwd">
+          </div>
+          <div>
+            <small id="smallMessage"></small>
+          </div>
+        <div class="buttonForm">
+            <button id="logIn" class="btn btn-primary zoom">Log In</button>
+        </div>
+      </div>
+    </main>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

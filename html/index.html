@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="col-8 mt-4">
+                <h1 class="title">Escape Room DWEC 23-24</h1>
+            </div>
+            <div class="col-2">
+                <div id="welcome">
+                    
+                </div>
+            </div>
+            <div class="col-1">
+                <button id="btnLogIn" class="btn btn-primary zoom"><a href="login.html">Log In</a></button>
+            </div>
+            <div class="col-1">
+                <button id="btnRegister" class="btn btn-primary zoom"><a href="register.html">Register</a></button>
+            </div>
+        </div>
+    </header>
+    <main>
+    
+        <div class="gameInformation">
+            <p>Bienvenido al Escape Room de DWEC 2023-2024, para empezar a jugar debes Registrarte, si ya tienes una cuenta puedes directamente Iniciar Sesión.<p>
+                Una vez tengas sesión iniciada selecciona el nivel de salas que quieres jugar y cuando acabes tu tiempo quedará guardado en la tabla de resultados
+            </p>
+        </div>
+
+        <div id="containerEmpezarJuego">
+            <button id="empezarJuego">Jugar</button>
+            <div id="mensajeNoLogin"></div>
+        </div>
+
+    </main>
+    <script src="../js/index.js"></script>
+</body>
+</html>

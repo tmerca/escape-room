@@ -1,0 +1,74 @@
+body {
+    background-color: bisque;
+  }
+  
+#smallUserpwd, #smallUseremail, #smallUsername {
+  color: crimson;
+}
+
+  .title {
+    text-align: center;
+    font-size: 50px;
+  }
+  
+  header {
+    background-color: burlywood;
+    height: 120px;
+  }
+  
+  button {
+    margin-top: 35px;
+    background-color: peru !important;
+    border: black solid 2px !important;
+    font-size: 16px !important;
+  }
+  
+  .zoom {
+    transition: transform 0.2s; /* Animation */
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  
+  a:hover, a, a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .logInForm {
+    margin: 0 auto;
+    margin-top: 160px;
+    background-color: burlywood;
+    width: 450px;
+    height: 460px;
+    border-radius: 5px;
+    border: black 2px solid;
+  }
+  
+  .labelForm {
+    margin-top: 40px;
+    margin-left: 30px;
+  }
+  
+  .buttonForm {
+      margin-left: 30px;
+  }
+  
+  .buttonForm button, button:hover, button:visited {
+      color: black !important;
+  }
+  
+  .logInTitle {
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+  
+  .labelForm label {
+    font-weight: bold;
+  }
+  
+  input {
+    margin-left: 20px;
+    border-radius: 5px;
+  }

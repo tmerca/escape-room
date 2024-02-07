@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/room1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Piedra Papel Tijeras</title>
+  </head>
+  <body>
+    <header>
+      <div class="row">
+          <div class="col-12 mt-4">
+              <h1 class="title">Escape Room DWEC 23-24 ➟ Primera sala: Piedra Papel Tijeras</h1>
+          </div>
+      </div>
+    </header>
+    <main>
+      <div id="tableroJuego" class="tablero">
+        <div class="row mt-3 primeraFila">
+          <div class="col-3">
+            Tus opciones
+          </div>
+          <div class="col-3">
+            Tu elección
+          </div>
+          <div class="col-3">
+            Elección CPU
+          </div>
+          <div class="col-3">
+            Elecciones CPU
+          </div>
+        </div>            
+        <div class="row fila">
+          <div class="col-3">
+              <img class="zoom" id="papelCliente" src="../img/paper.png" />
+          </div>
+          <div class="col-3">
+          </div>
+          <div class="col-3">
+          </div>
+          <div class="col-3 ">
+            <img class="zoom" src="../img/paper.png" />
+          </div>
+        </div>
+
+        <div class="row fila">
+          <div class="col-3">
+            <img src="../img/rock.png" id="rocaCliente" alt="" class="zoom">
+          </div>
+          <div class="col-3">
+            <img id="eleccionCliente" />
+          </div>
+          <div class="col-3">
+            <img id="eleccionCPU" />
+          </div>
+          <div class="col-3">
+            <img src="../img/rock.png" alt="" class="zoom">
+          </div>
+        </div>
+
+        <div class="row fila">
+          <div class="col-3">
+            <img class="zoom" id="tijerasCliente" src="../img/scissors.png" alt="">
+          </div>
+          <div class="col-3">
+          </div>
+          <div class="col-3">
+          </div>
+          <div class="col-3">
+            <img class="zoom" src="../img/scissors.png" alt="">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- POP-UP -->
+      <button id="btn-popup">Instrucciones</button>
+      <div class="envoltorio-popup">
+        <div class="popup">
+          <div class="cerrar-popup">X</div>
+          <div class="contenido-popup">
+            <h2>Instrucciones Piedra Papel Tijera</h2>
+            <p>
+              Para pasar de prueba debes ganar a la CPU 3 veces en piedra papel
+              tijera. Dispones de 3 elementos (Piedra, Papel y Tijera) de los
+              cuales cada ronda deberás elejir uno que luchará contra la opción que haya
+              elegido la CPU. 
+              <p>
+                Piedra gana a tijera y pierde contra papel.
+              </p>
+              <p>
+                Papel gana a piedra y pierde contra tijera.
+              </p>
+              <p>
+                Tijera gana a papel y pierde contra piedra.
+              </p>
+              Dispones de 6 vidas, cuando estas se acaben tendrás
+              que empezar de nuevo. En el caso de que luchéis con el mismo
+              elemento no ocurrirá nada, suerte!
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/room1.js"></script>
+  </body>
+</html>
