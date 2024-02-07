@@ -52,7 +52,7 @@ botonJugar.addEventListener("click", (e)=> {
   
   if(eleccionCliente.src){
 
-    botonJugar.style.display = "none";
+    // botonJugar.style.display = "none";
     var numAleatorio = Math.floor(Math.random() * 3 + 1);
 
     if(numAleatorio == 1){
@@ -66,36 +66,49 @@ botonJugar.addEventListener("click", (e)=> {
     //COMPROBAMOS AMBAS ELECCIONES
 
     // SI SACA PAPEL LA CPU
-    if(eleccionCPU.src == rutaPapel && eleccionCliente.src == rutaPapel) {
+    if(eleccionCPU.src == rutaPapel.value && eleccionCliente.src == rutaPapel.value) {
+      console.log("Empate");
       resultado.style.display = "block";
       resultado.innerText = "Empate técnico! Nadie pierde vida!";
     }else if(eleccionCPU.src == rutaPapel && eleccionCliente.src == rutaRoca) {
+      console.log("victoria CPU");
+
       resultado.style.display = "block";
       resultado.innerText = "Gana la CPU, pierdes una vida!"
     }else if(eleccionCPU.src == rutaPapel && eleccionCliente.src == rutaTijeras){
+      console.log("derrota CPU");
       resultado.style.display = "block";
       resultado.innerText = "Ganaste el duelo, CPU pierde una vida!"
     }
 
     // SI SACA ROCA LA CPU
     if(eleccionCPU.src == rutaRoca && eleccionCliente.src == rutaPapel){
+      console.log("derrota CPU");
+
       resultado.style.display = "block";
       resultado.innerText = "Ganaste el duelo, CPU pierde una vida!"
     }else if(eleccionCPU.src == rutaRoca && eleccionCliente.src == rutaRoca){
+      console.log("Empate");
+
       resultado.style.display = "block";
       resultado.innerText = "Empate técnico! Nadie pierde vida!"
     }else if(eleccionCPU.src == rutaRoca && eleccionCliente.src == rutaTijeras){
+      console.log("victoria CPU");
       resultado.style.display = "block";
       resultado.innerText = "Gana la CPU, pierdes una vida!"
     }
 
     if(eleccionCPU.src == rutaTijeras && eleccionCliente.src == rutaPapel){
+      console.log("victoria cpu");
       resultado.style.display = "block";
       resultado.innerText = "Gana la CPU, pierdes una vida!"
     }else if(eleccionCPU.src == rutaTijeras && eleccionCliente.src == rutaRoca){
+      console.log("derrota CPU");
       resultado.style.display = "block";
       resultado.innerText = "Ganaste el duelo, CPU pierde una vida!"
     }else if(eleccionCPU.src == rutaTijeras && eleccionCliente.src == rutaTijeras){
+      console.log("Empate");
+
       resultado.style.display = "block";
       resultado.innerText = "Empate técnico! Nadie pierde vida!"
     }
