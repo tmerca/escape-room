@@ -1,0 +1,74 @@
+body {
+  background-color: bisque !important;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+}
+
+header {
+  background-color: burlywood;
+  height: 120px;
+}
+
+header button {
+  margin-top: 45px !important;
+  background-color: peru !important;
+  border: black solid 2px !important;
+  font-size: 16px !important;
+}
+
+.zoom {
+  transition: transform 0.2s !important; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(
+    1.2
+  ) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+button > a:hover,
+button > a:visited,
+button > a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+}
+
+
+/* CSS MEMORY */
+li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: lightgrey;
+    margin: 10px 10px;
+    border: 2px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table {
+    text-align: center;
+}
+
+.box > p {
+    font-size: 40px;
+}
