@@ -41,34 +41,103 @@ img {
   height: 120px;
 }
 
-
-/* CSS MEMORY */
-li {
-    display: inline-block;
-    list-style-type: none;
+/* POPUP */
+.envoltorio-popup {
+  background-color: rgba(0,0,0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.popup {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 10% auto;
+  padding: 20px;
+  background: white;
+  position: relative;
+}
+.popup a{
+  background: crimson;
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+}
+.cerrar-popup {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  cursor: pointer;
 }
 
-main {
-    margin: 0 auto;
-    max-width: 600px;
+.col-1{
+  padding: 0;
 }
 
-.box {
-    width: 100px;
-    height: 100px;
-    background-color: lightgrey;
-    margin: 10px 10px;
-    border: 2px black solid;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+/* CSS ADIVINA EL NUMERO */
+
+#tableroJuego {
+  background-color:#e6b68b ;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 3px black solid;
+  border-radius: 5px;
+  width: 800px;
+  height: 500px;
 }
 
-.table {
-    text-align: center;
+#mensajeJuego {
+  margin: 0 auto;  
+  margin-top: 40px;
+  text-align: center;
+  background-color: #b4764f;
+  height: 60px;
+  width: 320px;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
-.box > p {
-    font-size: 40px;
+#mensajeJuego > p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#divNumCliente {
+  text-align: center;
+  width: 350px;
+  height: 120px;
+  margin: 0 auto;
+  margin-top: 80px;
+  background-color: #b4764f;
+  border: 2px black solid;
+}
+
+#divNumCliente > input {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 2px black solid;
+}
+
+div > button {
+  color: black !important;
+  background-color: peru !important;
+  border: black solid 2px !important;
+  font-size: 16px !important;
+}
+
+#intentosCliente {
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+#mensajes {
+  margin-top: 40px;
+  text-align: center;
 }
