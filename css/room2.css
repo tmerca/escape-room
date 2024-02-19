@@ -74,11 +74,6 @@ img {
   cursor: pointer;
 }
 
-.col-1{
-  padding: 0;
-}
-
-
 /* CSS ADIVINA EL NUMERO */
 
 #tableroJuego {
@@ -135,9 +130,26 @@ div > button {
   margin: 0 auto;
   margin-top: 40px;
   font-weight: bold;
+  font-size: 17px;
+}
+
+#listaIntentos > li{
+  list-style-type: none;
+  display: inline-block;
 }
 
 #mensajes {
   margin-top: 40px;
+  font-size: 20px;
   text-align: center;
+}
+
+.correcto {
+ color: #42ab49;
+ font-weight: bold;
+}
+
+.incorrecto {
+  color: #d34240;
+ font-weight: bold;
 }

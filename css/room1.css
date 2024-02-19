@@ -1,3 +1,5 @@
+/* CSS COMUN (HEADER ETC) */
+
 body {
   background-color: bisque !important;
 }
@@ -24,12 +26,17 @@ header button {
 }
 
 .zoom:hover {
-  transform: scale(1.2) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(
+    1.2
+  ) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-button > a:hover, button > a:visited, button > a {
+button,
+button > a:hover,
+button > a:visited,
+button > a {
   text-decoration: none;
-  color: black;
+  color: black !important;
 }
 
 img {
@@ -71,9 +78,13 @@ img {
 }
 
 /* CSS PIEDRA PAPEL TIJERAS */
+img {
+  width: 120px;
+  height: 120px;
+}
 
 .tablero {
-  background-color: white;
+  background-color: #e6b68b;
   margin: 0 auto;
   margin-top: 60px;
   width: 80%;

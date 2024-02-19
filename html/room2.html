@@ -15,8 +15,11 @@
 <body>
     <header>
         <div class="row">
-            <div class="col-11 mt-4">
+            <div class="col-9 mt-4">
                 <h1 class="title">Segunda Sala:</h1>
+            </div>
+            <div class="col-2">
+        <button class="btn btn-primary zoom" id="btn-popup">Instrucciones</button>
             </div>
             <div class="col-1">
                 <button class="btn btn-primary zoom"><a href="../html/index.html">Home</a></button>           
@@ -42,15 +45,13 @@
             <div id="intentosCliente">
                 Tus intentos:
                 <ul id="listaIntentos">
-
+                  
                 </ul>
             </div>
             <div id="mensajes"></div>
         </div>
 
         <!-- POP-UP -->
-
-        <button id="btn-popup">Instrucciones</button>
         <div class="envoltorio-popup">
         <div class="popup">
           <div class="cerrar-popup">X</div>
@@ -58,9 +59,10 @@
             <h2>Adivina el número</h2>
             <p>
               Para pasar de prueba debes adivinar el número entre 1 y 100 que ha pensado la CPU
+              
               <p>
                 Si no lo adivinas se te notificará mediante mensajes:
-            </p>
+              </p>
               <p>
                 Un poco mayor -> 10 números más como máximo 
                 </p>

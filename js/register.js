@@ -1,8 +1,11 @@
 document.getElementById("register").addEventListener("click", () => {
+
+  // CONSTANTES Y VARIABLES
   const username = document.getElementById("username");
   const useremail = document.getElementById("useremail");
   const userpwd = document.getElementById("userpwd");
   let validUser = true;
+
 
   //COMPROBACIÓN SI LOS CAMPOS ESTÁN VACÍOS
   if (username.value == "") {
@@ -30,6 +33,7 @@ document.getElementById("register").addEventListener("click", () => {
     }, 3000);
   }
 
+  
   // COMPROBACION DEL CORREO ELECTRONICO
   checkEmail();
 
