@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/room2.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="col-11 mt-4">
+                <h1 class="title">Segunda Sala:</h1>
+            </div>
+            <div class="col-1">
+                <button class="btn btn-primary zoom"><a href="../html/index.html">Home</a></button>           
+            </div>
+        </div>
+      </header>
+      <main>
+
+        <div id="tableroJuego">
+            <div id="mensajeJuego">
+                <p>
+                    Intenta adivinar el número del 1 al 100
+                </p>
+            </div>
+            <div id="divNumCliente">
+                <input type="text" id="numCliente">
+                <div>
+                    <button class="btn btn-primary zoom"
+                    id="enviarNumero">Enviar!</button>
+                </div>
+            </div>
+
+            <div id="intentosCliente">
+                Tus intentos:
+                <ul id="listaIntentos">
+
+                </ul>
+            </div>
+            <div id="mensajes"></div>
+        </div>
+
+        <!-- POP-UP -->
+
+        <button id="btn-popup">Instrucciones</button>
+        <div class="envoltorio-popup">
+        <div class="popup">
+          <div class="cerrar-popup">X</div>
+          <div class="contenido-popup">
+            <h2>Adivina el número</h2>
+            <p>
+              Para pasar de prueba debes adivinar el número entre 1 y 100 que ha pensado la CPU
+              <p>
+                Si no lo adivinas se te notificará mediante mensajes:
+            </p>
+              <p>
+                Un poco mayor -> 10 números más como máximo 
+                </p>
+              <p>
+                Mucho mayor -> 11 números más como mínimo
+              </p>
+              <p>
+                Un poco menor -> 10 números más pequeño como máximo
+              </p>
+              <p>
+                Mucho menor -> 11 números más pequeño como mínimo
+              </p>
+              Dispones de 8 intentos, cuando estas se acaben tendrás
+              que empezar de nuevo. Si ganas te llevaremos a la siguiente sala. 
+            </p>
+          </div>
+        </div>
+        </div>
+    </main>
+      <script src="../js/room2.js"></script>
+</body>
+</html>

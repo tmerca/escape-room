@@ -1,3 +1,5 @@
+/* CSS COMUN (HEADER ETC) */
+
 body {
   background-color: bisque !important;
 }
@@ -32,10 +34,6 @@ button > a:hover, button > a:visited, button > a {
   color: black;
 }
 
-img {
-  width: 120px;
-  height: 120px;
-}
 
 /* POPUP */
 .envoltorio-popup {
@@ -71,6 +69,10 @@ img {
 }
 
 /* CSS PIEDRA PAPEL TIJERAS */
+img {
+  width: 120px;
+  height: 120px;
+}
 
 .tablero {
   background-color: white;
