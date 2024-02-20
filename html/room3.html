@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/room3.css" />
+    <title>Ahorcado</title>
+  </head>
+  <body>
+    <header>
+      <div class="row">
+        <div class="col-9 mt-4">
+          <h1 class="title">Última Sala: Ahorcado</h1>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-primary zoom" id="btn-popup">
+            Instrucciones
+          </button>
+        </div>
+        <div class="col-1">
+          <button class="btn btn-primary zoom">
+            <a href="../html/index.html">Home</a>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <ul class="listContainers">
+        <li>
+          <div class="contenedor-mensaje">
+            <div id="mensaje-intentos" class="mensaje-intentos">
+              <div>Quedan <span id="intentos"></span> intentos</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div id="contenedor-mensaje-final">
+        <div id="mensaje-final"></div>
+      </div>
+
+      <div id="palabra"></div>
+
+      <div id="botones">
+        <button value="A" class="zoom letra">A</button>
+        <button value="B" class="zoom letra">B</button>
+        <button value="C" class="zoom letra">C</button>
+        <button value="D" class="zoom letra">D</button>
+        <button value="E" class="zoom letra">E</button>
+        <button value="F" class="zoom letra">F</button>
+        <button value="G" class="zoom letra">G</button>
+        <button value="H" class="zoom letra">H</button>
+        <button value="I" class="zoom letra">I</button>
+        <button value="J" class="zoom letra">J</button>
+        <button value="K" class="zoom letra">K</button>
+        <button value="L" class="zoom letra">L</button>
+        <button value="M" class="zoom letra">M</button>
+        <button value="N" class="zoom letra">N</button>
+        <button value="Ñ" class="zoom letra">Ñ</button>
+        <button value="O" class="zoom letra">O</button>
+        <button value="P" class="zoom letra">P</button>
+        <button value="Q" class="zoom letra">Q</button>
+        <button value="R" class="zoom letra">R</button>
+        <button value="S" class="zoom letra">S</button>
+        <button value="T" class="zoom letra">T</button>
+        <button value="U" class="zoom letra">U</button>
+        <button value="V" class="zoom letra">V</button>
+        <button value="W" class="zoom letra">W</button>
+        <button value="X" class="zoom letra">X</button>
+        <button value="Y" class="zoom letra">Y</button>
+        <button value="Z" class="zoom letra">Z</button>
+      </div>
+
+      <div id="mensaje-letras-incorrectas">Letras incorrectas:</div>
+      <div id="letras-incorrectas"></div>
+
+      <div class="envoltorio-popup">
+        <div class="popup">
+          <div class="cerrar-popup">X</div>
+          <div class="contenido-popup">
+            <h4>Bienvenido a la última sala, el Ahorcado:</h4>
+            <p>
+              En el teclado que te ofrecemos en pantalla debes pulsar las letras
+              que creas que contiene la palabra escondida.
+            </p>
+            <p>
+              Por cada acierto se pondrá la letra que has pulsado en su
+              posición.
+            </p>
+            <p>Puedes fallar un máximo de 9 veces, suerte!</p>
+            <a href="#">Entendido!</a>
+          </div>
+        </div>
+      </div>
+      <script src="../js/room3.js"></script>
+    </main>
+  </body>
+</html>
