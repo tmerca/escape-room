@@ -4,13 +4,22 @@ let userWelcome = document.getElementById("welcome");
 let empezarJuego = document.getElementById("empezarJuego");
 let noLogin = document.getElementById("mensajeNoLogin");
 let logIn = document.getElementById("btnLogIn");
+let btnEditUser = document.getElementById("btnEditUser");
 let loggedIn = false;
 
 // PONEMOS EL MENSAJE DE BIENVENIDA 
-
 if(welcome){
     loggedIn = true;
     userWelcome.innerText = "Hola " + welcome.username;
+    btnEditUser.style.display = "block";
+}else{
+    btnEditUser.style.display = "none";
+}
+
+if(welcome.userroom1.value == true){
+    document.getElementById("containerPartida").style.display = "none";
+} else{
+    document.getElementById("containerPartida").style.display = "block";
 }
 
 // CUANDO EL USUARIO ESTÁ REGISTRADO DEJAMOS QUE PUEDA PULSAR JUGAR 

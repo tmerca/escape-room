@@ -1,14 +1,19 @@
-// POPUP DE LAS INSTRUCCIONES
+let welcome = JSON.parse(sessionStorage.getItem("usuarios"));
 
-function popup() {
+if (!welcome) {
+  document.getElementById("juego").style.display = "none";
+} else {
+  
+  
+  /* POPUP DE LAS INSTRUCCIONES */
   const boton = document.getElementById("btn-popup");
   const envoltorio = document.querySelector(".envoltorio-popup");
   const cerrar = document.querySelector(".cerrar-popup");
-
+  
   boton.addEventListener("click", () => {
     envoltorio.style.display = "block";
   });
-
+  
   // Segundo evento -> Click sobre el botón para cerrar el pop-up
   cerrar.addEventListener("click", () => {
     envoltorio.style.display = "none";
@@ -18,89 +23,147 @@ function popup() {
   envoltorio.addEventListener("click", () => {
     envoltorio.style.display = "none";
   });
-}
-popup();
+  
+  // CODIGO DEL JUEGO ENCUENTRA LAS 6 DIFERENCIAS
+  let mensaje = document.getElementById("mensaje");
+  let nivelUno = document.getElementById("nivelUno");
+  let nivelDos = document.getElementById("nivelDos");
+  let contadorMap1 = 6;
+  let contadorMap2 = 6;
+  let numDiferencias = document.getElementById('numDiferencias');  
+  let mapeo1 = document.getElementById("mapeo1");
+  let mapeo2 = document.getElementById("mapeo2");
 
-// CÓDIGO DEL JUEGO
+  mensaje.style.display = "none";
+  nivelDos.style.display = "none";
 
-//VARIABLES
-let numeroAAdivinar = Math.floor(Math.random() * 100) + 1;
-let mensajes = document.getElementById("mensajes");
-let enviarNumero = document.getElementById("enviarNumero");
-let listaIntentos = document.getElementById("listaIntentos");
-let numeroValido = true;
-let numerosCliente = [];
+  document.getElementById("noInicioSesion").style.display = "none";
 
-// CONSOLE LOG PARA SABER QUE NUMERO A GENERADO
-console.log(numeroAAdivinar);
 
-enviarNumero.addEventListener("click", function () {
-  let numCliente = document.getElementById("numCliente").value;
-
-  requisitosNumero(numCliente);
-
-  if (numeroValido) {
-    comprobarNumero(numCliente);
-    if (numCliente != numeroAAdivinar) {
-      listaIntentos.innerHTML += "<li>" + numCliente + ", </li>";
+  mapeo1.addEventListener("click", (e) => {
+    
+    switch(e.target.id) {
+      case "img1area1":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap1 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img1area2":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap1 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img1area3":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap1 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img1area4":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap1 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img1area5":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap1 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img1area6":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap1 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
     }
-  }
-});
 
-function vaciarCampos() {
-  document.getElementById("numCliente").style.visibility = "hidden";
+    if(contadorMap1 == 0){
+      
+      mensaje.innerHTML = "<p>Felicidades, has superado el primer nivel, si superas el siguiente pasarás a la prueba final!</p>";
+      mensaje.style.display = "block";
+      document.getElementById("diferenciasRestantes").style.display = "none";
+      nivelUno.style.display = "none";
 
-  setTimeout(() => {
-    mensajes.innerText = "";
-    document.getElementById("numCliente").value = "";
-    document.getElementById("numCliente").style.visibility = "visible";
-  }, 3000);
-}
+      setTimeout(() => {
+        mensaje.style.display = "none";
+        document.getElementById("diferenciasRestantes").style.display = "block";
+        numDiferencias.innerText = 6;
+        nivelDos.style.display = "block";
+      }, 4000);
 
-function requisitosNumero(numero) {
-  let pattern = /[^0-9]/;
-
-  if (pattern.test(numero) || numero > 100 || numero < 1) {
-    mensajes.innerText = "Ingresa un dato de valor numérico válido!";
-    vaciarCampos();
-    numeroValido = false;
-  } else {
-    mensajes.innerText = "";
-    numeroValido = true;
-  }
-}
-
-function comprobarNumero(numero) {
-  let resultadoOperacion;
-
-  if (numero > numeroAAdivinar) {
-    resultadoOperacion = numero - numeroAAdivinar;
-
-    if (resultadoOperacion > 10) {
-      mensajes.classList.add("incorrecto")
-      mensajes.innerText = "El número a adivinar es mucho menor";
-      vaciarCampos();
-    } else if (resultadoOperacion < 11 && resultadoOperacion > 0) {
-      mensajes.classList.add("incorrecto")
-      mensajes.innerText = "El número a adivinar es un poco menor";
-      vaciarCampos();
     }
-  } else if (numero < numeroAAdivinar) {
-    resultadoOperacion = numeroAAdivinar - numero;
 
-    if (resultadoOperacion > 10) {
-      mensajes.classList.add("incorrecto")
-      mensajes.innerText = "El número a adivinar es mucho mayor";
-      vaciarCampos();
-    } else if (resultadoOperacion < 11 && resultadoOperacion > 0) {
-      mensajes.classList.add("incorrecto")
-      mensajes.innerText = "El número a adivinar es un poco mayor";
-      vaciarCampos();
+  });
+
+  mapeo2.addEventListener("click", (e) => {
+    
+    switch(e.target.id) {
+      case "img2area1":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap2 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img2area2":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap2 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img2area3":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap2 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img2area4":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap2 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img2area5":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap2 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
+      case "img2area6":
+        if(!e.target.classList.contains('selected')){
+          numDiferencias.innerText -=1;
+          contadorMap2 -=1;
+          e.target.classList.add('selected');
+        }
+        break;
     }
-  } else {
-    listaIntentos.innerHTML = "";
-    mensajes.classList.add("correcto")
-    mensajes.innerText =
-      "Enhorabuena, has ganado! Redirigiéndote a la última sala...";
-  }
+
+    if(contadorMap2 == 0) {
+
+      mensaje.innerHTML = "<p>Felicidades, has ganado! Pasas a la siguiente y última prueba!</p>";
+      mensaje.style.display = 'block';
+      document.getElementById("diferenciasRestantes").style.display = "none";
+      nivelDos.style.display = "none";
+
+      setTimeout(() => {
+        window.location.href = "../html/room3.html";
+      }, 3000);
+
+    }
+
+  });
 }

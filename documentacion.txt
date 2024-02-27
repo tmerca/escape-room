@@ -10,3 +10,24 @@ Ya comprueba el resultado del duelo y muestra el mensaje correspondiente, falta 
 Dia 31:
 He creado las paginas de registro e inicio de sesion y iniciado el Local Storage y Session Storage. Cuando el usuario se registra automaticamente le inicia la sesión
 
+Dia 2:
+He trabajado la sala numero 2 (juego de adivinar el numero del 1 al 100)
+
+Dia 5: 
+Sigo trabajando en la sala dos y controlando errores de la primera sala y la segunda
+
+Dia 6 y 7:
+Sala 2 terminada, no me termina de convencer la sala, si tengo alguna idea mejor la cambiaré
+
+Dia 12 y 13:
+He empezado al sala 3 (ahorcado), he usado el código existente del proyecto de navidad añadiéndole la funcion de elegir la temática y tambien cambiando la paleta de colores
+
+Dia 19:
+He creado la pagina para editar los datos del cliente, de momento no se como hacer para cambiar los datos del local storage pero el session storage lo tengo controlando
+
+Dia 20:
+He decidido borrar la sala 2 y esperar a que el profesor explique el mapeo de imágenes para crear un encuentra las diferencias o un buscando a wally
+
+Dia 21:
+He empezado de nuevo la sala 2 con un encuentra las 6 diferencias 
+

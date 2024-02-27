@@ -10,6 +10,7 @@ body {
 header {
   background-color: burlywood;
   height: 120px;
+  
 }
 
 header button {
@@ -17,6 +18,7 @@ header button {
   background-color: peru !important;
   border: black solid 2px !important;
   font-size: 16px !important;
+  color: black !important;
 }
 
 .zoom {
@@ -68,82 +70,67 @@ button > a {
   cursor: pointer;
 }
 
-/* CSS ADIVINA EL NUMERO */
+/* CSS SALA 2 */
 
-#tableroJuego {
-  background-color:#e6b68b ;
-  margin: 0 auto;
-  margin-top: 30px;
-  border: 3px black solid;
-  border-radius: 5px;
-  width: 800px;
-  height: 500px;
+.imagenesDiferentes {
+  text-align: center;
 }
 
-#mensajeJuego {
-  margin: 0 auto;  
-  margin-top: 40px;
-  text-align: center;
-  background-color: #b4764f;
-  height: 60px;
-  width: 320px;
-  border: 2px solid black;
+.imagenesDiferentes img{
+  margin: 50px 40px;
+  border: 2px black solid;
   border-radius: 4px;
 }
 
-#mensajeJuego > p {
+.mensajeDiferenciasRestantes {
+  margin: 0 auto;
+  background-color: #e6b68b;
+  text-align: center;
+  font-size: 25px;
+  width: 500px;
+  height: 80px;
+  border-radius: 5px;
+  border: 2px black solid;
+  font-weight: bold;
+}
+
+.mensajeDiferenciasRestantes > p {
+  margin-top: 15px;
+}
+
+#noInicioSesion {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6b68b;
+  height: 70px;
+  width: 550px;
+  margin-top: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+
+.selected {
+  
+}
+
+#mensaje {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6b68b;
+  height: 70px;
+  width: 600px;
+  margin-top: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+
+#mensaje > p {
   margin-top: 10px;
-  font-weight: bold;
-}
-
-#divNumCliente {
-  text-align: center;
-  width: 350px;
-  height: 120px;
-  margin: 0 auto;
-  margin-top: 80px;
-  background-color: #b4764f;
-  border: 2px black solid;
-}
-
-#divNumCliente > input {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  border: 2px black solid;
-}
-
-div > button {
-  color: black !important;
-  background-color: peru !important;
-  border: black solid 2px !important;
-  font-size: 16px !important;
-}
-
-#intentosCliente {
-  width: 350px;
-  margin: 0 auto;
-  margin-top: 40px;
-  font-weight: bold;
-  font-size: 17px;
-}
-
-#listaIntentos > li{
-  list-style-type: none;
-  display: inline-block;
-}
-
-#mensajes {
-  margin-top: 40px;
-  font-size: 20px;
-  text-align: center;
-}
-
-.correcto {
- color: #42ab49;
- font-weight: bold;
-}
-
-.incorrecto {
-  color: #d34240;
- font-weight: bold;
 }

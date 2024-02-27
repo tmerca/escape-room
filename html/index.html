@@ -10,13 +10,16 @@
 <body>
     <header>
         <div class="row">
-            <div class="col-8 mt-4">
+            <div class="col-7 mt-4">
                 <h1 class="title">Escape Room DWEC 23-24</h1>
             </div>
             <div class="col-2">
                 <div id="welcome">
                     
                 </div>
+            </div>
+            <div class="col-1">
+                <button id="btnEditUser" class="btn btn-primary zoom"><a href="edit.html">Edit data</a></button>
             </div>
             <div class="col-1">
                 <button id="btnLogIn" class="btn btn-primary zoom"><a href="login.html">Log In</a></button>
@@ -30,13 +33,21 @@
     
         <div class="gameInformation">
             <p>Bienvenido al Escape Room de DWEC 2023-2024, para empezar a jugar debes Registrarte, si ya tienes una cuenta puedes directamente Iniciar Sesión.<p>
-                Una vez tengas sesión iniciada selecciona el nivel de salas que quieres jugar y cuando acabes tu tiempo quedará guardado en la tabla de resultados
             </p>
         </div>
 
         <div id="containerEmpezarJuego">
             <button id="empezarJuego">Jugar</button>
             <div id="mensajeNoLogin"></div>
+        </div>
+
+        <div id="containerPartida">
+            <p>Tienes una partida empezada, quieres continuarla?<p>(La sala donde lo dejaste se reinicia)
+            
+            <div id="botonesContinuarPartida">
+                <button class="btn btn-primary zoom" id="yes">Si</button>
+                <button class="btn btn-primary zoom" id="no">No</button>
+            </div>
         </div>
 
     </main>

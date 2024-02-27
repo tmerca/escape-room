@@ -1,5 +1,13 @@
-  
-  // POPUP DE LAS INSTRUCCIONES
+let welcome = JSON.parse(sessionStorage.getItem("usuarios"));
+
+if(!welcome) {
+  document.getElementById('juego').style.display = 'none';
+  console.log("No ha podido ser");
+}else {
+
+  document.getElementById("noInicioSesion").style.display = "none";
+
+ /* POPUP DE LAS INSTRUCCIONES */
   const boton = document.getElementById("btn-popup");
   const envoltorio = document.querySelector(".envoltorio-popup");
   const cerrar = document.querySelector(".cerrar-popup");
@@ -18,7 +26,7 @@
     envoltorio.style.display = "none";
   });
   
-  // EVENTO PARA ELEJIR ENTRE LAS TRES OPCIONES
+  // VARIABLES
   let tableroJuego = document.getElementById("tableroJuego");
   let eleccionCliente = document.getElementById("eleccionCliente");
   let eleccionCPU = document.getElementById("eleccionCPU");
@@ -37,6 +45,7 @@
   let rutaTijeras = "/img/scissors.png";
   
   
+  /* EVENTO PARA ELEJIR ENTRE LAS TRES OPCIONES */
   tableroJuego.addEventListener("click", (e) => {
     if(e.target.id && e.target.id != "tableroJuego"){
   
@@ -68,7 +77,7 @@
     tijerasCPU.style.display = "none";
   
   
-    if(eleccionCliente.src){
+    if(eleccionCliente.src != ""){
   
       botonJugar.style.display = "none";
       var numAleatorio = Math.floor(Math.random() * 3 + 1);
@@ -81,8 +90,6 @@
       }
   
       //COMPROBAMOS AMBAS ELECCIONES
-  
-  
   
       // CPU SACA PAPEL
       if(eleccionCPU.src.endsWith("paper.png") && eleccionCliente.src.endsWith("paper.png")) {
@@ -133,8 +140,6 @@
       }
   
   
-  
-  
       //CPU SACA TIJERAS
       if(eleccionCPU.src.endsWith("scissors.png") && eleccionCliente.src.endsWith("paper.png")){
   
@@ -161,10 +166,23 @@
       resultadoFinal();
   
     }else{
+
       resultado.innerText = "Elije primero una opción para empezar el duelo";
+
+      setTimeout(() => {
+        resultado.innerText = "";
+      }, 2000);
+
+      papelCliente.style.display = "block";
+      rocaCliente.style.display = "block";
+      tijerasCliente.style.display = "block";
+  
+      papelCPU.style.display = "block";
+      rocaCPU.style.display = "block";
+      tijerasCPU.style.display = "block";
+
     }
   });
-  
   
   function temporizadorParaJugar() {
   
@@ -192,18 +210,40 @@
   }
   
   function resultadoFinal() {
-  
+
+    
+    // Actualizamos los datos del session Storage
+    let usuario = JSON.parse(sessionStorage.getItem('usuarios'));
+    usuario.userroom1 = true;
+    sessionStorage.setItem('usuarios', JSON.stringify(usuario));
+    
+    //Actualizamos los datos del local Storage
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')); 
+    for(let i = 0; i < usuarios.length; i++){
+      if(usuarios[i].username == usuario.username) {
+        usuarios[i].userroom1 = true;      
+      }
+    }
+
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    // Escondemos el boton de jugar
     botonJugar.style.display = "None";
-  
-    if(vidasCliente.innerText == 0){
+     
+    // Comprobamos quien pierde todas las vidas antes
+    if (vidasCliente.innerText == 0) {
       resultado.innerText = "Has perdido :( , redirigiéndote al menú principal...";
       setTimeout(() => {
         window.location.href = "../html/index.html";
       }, 3000);
-    }else if(vidasCPU.innerText == 0) {
+    } else if (vidasCPU.innerText == 0) {
       resultado.innerText = "Has ganado! Redirigiéndote a la siguiente sala...";
+      
+
+      // Redirigir después de la actualización
       setTimeout(() => {
         window.location.href = "../html/room2.html";
       }, 3000);
     }
   }
+}

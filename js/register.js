@@ -1,11 +1,9 @@
 document.getElementById("register").addEventListener("click", () => {
-
   // CONSTANTES Y VARIABLES
   const username = document.getElementById("username");
   const useremail = document.getElementById("useremail");
   const userpwd = document.getElementById("userpwd");
   let validUser = true;
-
 
   //COMPROBACIÓN SI LOS CAMPOS ESTÁN VACÍOS
   if (username.value == "") {
@@ -33,22 +31,20 @@ document.getElementById("register").addEventListener("click", () => {
     }, 3000);
   }
 
-  
   // COMPROBACION DEL CORREO ELECTRONICO
   checkEmail();
 
   // FUNCION PARA COMPROBAR SI EL EMAIL ES VALIDO
   function checkEmail() {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if(!re.test(useremail.value.trim())){
+    if (!re.test(useremail.value.trim())) {
       validUser = false;
     }
-
   }
 
-  if(!checkNumber(userpwd.value)){
+  if (!checkNumber(userpwd.value)) {
     validUser = false;
     document.getElementById("smallUserpwd").innerText =
       "La contraseña no contiene un número";
@@ -57,7 +53,7 @@ document.getElementById("register").addEventListener("click", () => {
     }, 3000);
   }
 
-  if(!checkUpperCase(userpwd.value)){
+  if (!checkUpperCase(userpwd.value)) {
     validUser = false;
     document.getElementById("smallUserpwd").innerText =
       "La contraseña no contiene mayúsculas";
@@ -66,7 +62,7 @@ document.getElementById("register").addEventListener("click", () => {
     }, 3000);
   }
 
-  if(!checkLowerCase(userpwd.value)){
+  if (!checkLowerCase(userpwd.value)) {
     validUser = false;
     document.getElementById("smallUserpwd").innerText =
       "La contraseña no contiene minúsculas";
@@ -75,7 +71,7 @@ document.getElementById("register").addEventListener("click", () => {
     }, 3000);
   }
 
-  if(checkLength(userpwd.value)){
+  if (checkLength(userpwd.value)) {
     validUser = false;
     document.getElementById("smallUserpwd").innerText =
       "La contraseña no cumple la longitud";
@@ -88,17 +84,34 @@ document.getElementById("register").addEventListener("click", () => {
   function checkNumber(userpwd) {
     return /[0-9]/.test(userpwd);
   }
-  function checkUpperCase(userpwd){
-    return /[A-Z]/.test(userpwd)
+  function checkUpperCase(userpwd) {
+    return /[A-Z]/.test(userpwd);
   }
-  function checkLowerCase(userpwd){
-    return /[a-z]/.test(userpwd)
+  function checkLowerCase(userpwd) {
+    return /[a-z]/.test(userpwd);
   }
-  function checkLength(userpwd){
-    if(userpwd.length < 6) {
+  function checkLength(userpwd) {
+    if (userpwd.length < 6) {
       return true;
     }
     return false;
+  }
+  function usernameExists(newUsername) {
+    // Recuperamos el array de usuarios del localStorage
+    var usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Verificamos si el nuevo nombre de usuario ya existe en el array
+    return usuarios.some((user) => user.username === newUsername);
+  }
+
+  // Verificamos si el nombre de usuario ya existe en el localStorage
+  if (usernameExists(username.value)) {
+    validUser = false;
+    document.getElementById("smallUsername").innerText =
+      "El nombre de usuario ya existe. Por favor, elige otro.";
+    setTimeout(() => {
+      window.location.href = "../html/register.html";
+    }, 3000);
   }
 
   // DAMOS DE ALTA AL USUARIO
@@ -108,8 +121,11 @@ document.getElementById("register").addEventListener("click", () => {
     nuevoUsuario.username = username.value;
     nuevoUsuario.useremail = useremail.value;
     nuevoUsuario.userpwd = userpwd.value;
+    nuevoUsuario.userroom1 = false;
+    nuevoUsuario.userroom2 = false;
+    nuevoUsuario.userroom3 = false;
 
-    if (localStorage.usuarios) {
+    if (localStorage.usuarios ) {
       usuarios = JSON.parse(localStorage.getItem("usuarios"));
     } else {
       usuarios = [];
@@ -120,6 +136,5 @@ document.getElementById("register").addEventListener("click", () => {
 
     //Cambiamos/Creamos el usuario de Session storage
     sessionStorage.setItem("usuarios", JSON.stringify(nuevoUsuario));
-
   }
 });

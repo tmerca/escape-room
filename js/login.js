@@ -9,14 +9,17 @@ login.addEventListener('click', () => {
     let usuarios =  JSON.parse(localStorage.getItem('usuarios'));
     
     // Comprobamos que los datos introducidos coincidan con algun usuario del local Storage
-    for(i = 0; i < usuarios.length; i++) {
-        if(useremail.value == usuarios[i].useremail && userpwd.value == usuarios[i].userpwd){
-            userFound = true;
-            // Cambiamos el usuario del Session storage
-            sessionStorage.setItem('usuarios', JSON.stringify(usuarios[i]));
-            window.location.href = "../html/index.html";
-            break;
+    if(usuarios){
+        for(i = 0; i < usuarios.length; i++) {
+            if(useremail.value == usuarios[i].useremail && userpwd.value == usuarios[i].userpwd){
+                userFound = true;
+                // Cambiamos el usuario del Session storage
+                sessionStorage.setItem('usuarios', JSON.stringify(usuarios[i]));
+                window.location.href = "../html/index.html";
+                break;
+            }
         }
+
     }
 
     if(userFound == false) {

@@ -39,10 +39,6 @@ button > a {
   color: black !important;
 }
 
-img {
-  width: 120px;
-  height: 120px;
-}
 
 /* POPUP */
 .envoltorio-popup {
@@ -129,4 +125,18 @@ img {
 
 .zoom:hover {
   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#noInicioSesion {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6b68b;
+  height: 70px;
+  width: 550px;
+  margin-top: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px black solid;
 }

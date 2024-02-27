@@ -67,3 +67,28 @@ a:visited {
 #mensajeNoLogin {
   margin-top: 20px;
 }
+
+#containerPartida {
+  text-align: center;
+  margin: 0 auto;
+  background-color: burlywood;
+  width: 500px;
+  height: 140px;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+#containerPartida p {
+  font-weight: 500;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#containerPartida button {
+  width: 50px;
+  color: black;
+  background-color: peru !important;
+  border: black solid 2px !important;
+  font-size: 16px !important;
+}

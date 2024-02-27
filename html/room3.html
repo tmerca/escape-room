@@ -17,7 +17,7 @@
     <header>
       <div class="row">
         <div class="col-9 mt-4">
-          <h1 class="title">Última Sala: Ahorcado</h1>
+          <h1 class="title"><p>Última Sala: Ahorcado</p></h1>
         </div>
         <div class="col-2">
           <button class="btn btn-primary zoom" id="btn-popup">
@@ -31,61 +31,104 @@
         </div>
       </div>
     </header>
-    <main>
-      <ul class="listContainers">
-        <li>
-          <div class="contenedor-mensaje">
-            <div id="mensaje-intentos" class="mensaje-intentos">
-              <div>Quedan <span id="intentos"></span> intentos</div>
+    <main id="juego">
+      <div id="mensajeTematicas">
+        <p>
+          Bienvenido! Antes de empezar con la última prueba, el Ahorcado, debes
+          elegir la temática de la palabra que tendrás que adivinar.
+          <br />
+          Dentro de estas 3 temáticas habrá en cada una 6 posibles palabras en
+          relación al tema que hayas elegido. <br />
+          Mucha suerte!
+        </p>
+      </div>
+
+      <div id="elegirTema">
+        <div class="col-12">
+          <div class="row tematicas">
+            <div class="col-4">
+              <label class="zoom" for="tematica1">
+                <input type="radio" name="radioTema" id="radioTema1" />
+                <label>Animales</label>
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="zoom" for="tematica2">
+                <input type="radio" name="radioTema" id="radioTema2" />
+                <label>Frutas</label>
+              </label>
+            </div>
+            <div class="col-4">
+              <label class="zoom" for="tematica3">
+                <input type="radio" name="radioTema" id="radioTema3" />
+                <label>Deportes</label>
+              </label>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
 
-      <div id="contenedor-mensaje-final">
-        <div id="mensaje-final"></div>
+        <div class="col-12" id="divBotonTematica">
+          <button class="btn-primary btn zoom" id="enviarTematica">
+            Listo!
+          </button>
+        </div>
+        <div id="mensajeSinTematica"></div>
       </div>
 
-      <div id="palabra"></div>
+      <div id="juegoAhorcado">
+        <ul class="listContainers">
+          <li>
+            <div class="contenedor-mensaje">
+              <div id="mensaje-intentos" class="mensaje-intentos">
+                <div>Quedan <span id="intentos"></span> intentos</div>
+              </div>
+            </div>
+          </li>
+        </ul>
 
-      <div id="botones">
-        <button value="A" class="zoom letra">A</button>
-        <button value="B" class="zoom letra">B</button>
-        <button value="C" class="zoom letra">C</button>
-        <button value="D" class="zoom letra">D</button>
-        <button value="E" class="zoom letra">E</button>
-        <button value="F" class="zoom letra">F</button>
-        <button value="G" class="zoom letra">G</button>
-        <button value="H" class="zoom letra">H</button>
-        <button value="I" class="zoom letra">I</button>
-        <button value="J" class="zoom letra">J</button>
-        <button value="K" class="zoom letra">K</button>
-        <button value="L" class="zoom letra">L</button>
-        <button value="M" class="zoom letra">M</button>
-        <button value="N" class="zoom letra">N</button>
-        <button value="Ñ" class="zoom letra">Ñ</button>
-        <button value="O" class="zoom letra">O</button>
-        <button value="P" class="zoom letra">P</button>
-        <button value="Q" class="zoom letra">Q</button>
-        <button value="R" class="zoom letra">R</button>
-        <button value="S" class="zoom letra">S</button>
-        <button value="T" class="zoom letra">T</button>
-        <button value="U" class="zoom letra">U</button>
-        <button value="V" class="zoom letra">V</button>
-        <button value="W" class="zoom letra">W</button>
-        <button value="X" class="zoom letra">X</button>
-        <button value="Y" class="zoom letra">Y</button>
-        <button value="Z" class="zoom letra">Z</button>
+        <div id="contenedor-mensaje-final"></div>
+
+        <div id="palabra"></div>
+
+        <div id="botones">
+          <button value="A" class="zoom letra">A</button>
+          <button value="B" class="zoom letra">B</button>
+          <button value="C" class="zoom letra">C</button>
+          <button value="D" class="zoom letra">D</button>
+          <button value="E" class="zoom letra">E</button>
+          <button value="F" class="zoom letra">F</button>
+          <button value="G" class="zoom letra">G</button>
+          <button value="H" class="zoom letra">H</button>
+          <button value="I" class="zoom letra">I</button>
+          <button value="J" class="zoom letra">J</button>
+          <button value="K" class="zoom letra">K</button>
+          <button value="L" class="zoom letra">L</button>
+          <button value="M" class="zoom letra">M</button>
+          <button value="N" class="zoom letra">N</button>
+          <button value="Ñ" class="zoom letra">Ñ</button>
+          <button value="O" class="zoom letra">O</button>
+          <button value="P" class="zoom letra">P</button>
+          <button value="Q" class="zoom letra">Q</button>
+          <button value="R" class="zoom letra">R</button>
+          <button value="S" class="zoom letra">S</button>
+          <button value="T" class="zoom letra">T</button>
+          <button value="U" class="zoom letra">U</button>
+          <button value="V" class="zoom letra">V</button>
+          <button value="W" class="zoom letra">W</button>
+          <button value="X" class="zoom letra">X</button>
+          <button value="Y" class="zoom letra">Y</button>
+          <button value="Z" class="zoom letra">Z</button>
+        </div>
+
+        <div id="mensaje-letras-incorrectas">Letras incorrectas:</div>
+        <div id="letras-incorrectas"></div>
       </div>
-
-      <div id="mensaje-letras-incorrectas">Letras incorrectas:</div>
-      <div id="letras-incorrectas"></div>
 
       <div class="envoltorio-popup">
         <div class="popup">
           <div class="cerrar-popup">X</div>
           <div class="contenido-popup">
-            <h4>Bienvenido a la última sala, el Ahorcado:</h4>
+            <h4>Instrucciones Ahorcado:</h4>
             <p>
               En el teclado que te ofrecemos en pantalla debes pulsar las letras
               que creas que contiene la palabra escondida.
@@ -95,11 +138,13 @@
               posición.
             </p>
             <p>Puedes fallar un máximo de 9 veces, suerte!</p>
-            <a href="#">Entendido!</a>
           </div>
         </div>
       </div>
-      <script src="../js/room3.js"></script>
     </main>
+    <div id="noInicioSesion">
+      No puedes acceder al Escape Room sin antes iniciar sesion
+    </div>
+    <script src="../js/room3.js"></script>
   </body>
 </html>

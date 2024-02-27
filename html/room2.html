@@ -1,87 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/room2.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
     />
-    <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="../css/room2.css" />
+    <title>Encuentra las 6 diferencias</title>
+  </head>
+  <body>
     <header>
-        <div class="row">
-            <div class="col-9 mt-4">
-                <h1 class="title">Segunda Sala:</h1>
-            </div>
-            <div class="col-2">
-        <button class="btn btn-primary zoom" id="btn-popup">Instrucciones</button>
-            </div>
-            <div class="col-1">
-                <button class="btn btn-primary zoom"><a href="../html/index.html">Home</a></button>           
-            </div>
+      <div class="row">
+        <div class="col-9 mt-4">
+          <h1 class="title"><p>Segunda sala: Encuentra las 6 diferencias</p></h1>
         </div>
-      </header>
-      <main>
-
-        <div id="tableroJuego">
-            <div id="mensajeJuego">
-                <p>
-                    Intenta adivinar el número del 1 al 100
-                </p>
-            </div>
-            <div id="divNumCliente">
-                <input type="text" id="numCliente">
-                <div>
-                    <button class="btn btn-primary zoom"
-                    id="enviarNumero">Enviar!</button>
-                </div>
-            </div>
-
-            <div id="intentosCliente">
-                Tus intentos:
-                <ul id="listaIntentos">
-                  
-                </ul>
-            </div>
-            <div id="mensajes"></div>
+        <div class="col-2">
+          <button class="btn btn-primary zoom" id="btn-popup">
+            Instrucciones
+          </button>
         </div>
+        <div class="col-1">
+          <button class="btn btn-primary zoom">
+            <a href="../html/index.html">Home</a>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="juego">
 
-        <!-- POP-UP -->
-        <div class="envoltorio-popup">
+      <div class="imagenesDiferentes" id="nivelUno">
+        <img src="../img/imagen1.png" />
+        <img src="../img/imagen2.png" usemap="#nivel1"/>
+      </div>  
+      
+      <map name="nivel1" id="mapeo1">
+        <area shape="rect" coords="613,372,632,430" id="img1area1">
+        <area shape="rect" coords="116,244,133,272" id="img1area2">
+        <area shape="rect" coords="203,402,247,462" id="img1area3">
+        <area shape="rect" coords="370,400,382,420" id="img1area4">
+        <area shape="rect" coords="523,321,536,337" id="img1area5">
+        <area shape="rect" coords="484,416,565,508" id="img1area6">
+      </map>
+      
+      <div class="imagenesDiferentes" id="nivelDos">
+        <img src="../img/imagen3.png" />
+        <img src="../img/imagen4.png" usemap="#nivel2"/>
+      </div>  
+      
+      <map name="nivel2" id="mapeo2">
+        <area shape="rect" coords="64,473,75,491" id="img2area1">
+        <area shape="rect" coords="236,364,250,395" id="img2area2">
+        <area shape="rect" coords="464,371,480,394" id="img2area3">
+        <area shape="rect" coords="477,383,520,425" id="img2area4">
+        <area shape="rect" coords="588,455,613,471" id="img2area5">
+        <area shape="rect" coords="519,521,549,565" id="img2area6">
+      </map>
+      
+      <div id="diferenciasRestantes" class="mensajeDiferenciasRestantes">
+        <p>Quedan <span id="numDiferencias">6</span> diferencias por encontrar</p>
+      </div>
+
+      <div id="mensaje">
+
+      </div>      
+      <!-- POP-UP -->
+      <div class="envoltorio-popup">
         <div class="popup">
           <div class="cerrar-popup">X</div>
           <div class="contenido-popup">
-            <h2>Adivina el número</h2>
+            <h2>Encuentra las 6 diferencias</h2>
             <p>
-              Para pasar de prueba debes adivinar el número entre 1 y 100 que ha pensado la CPU
-              
+              Para pasar de prueba debes encontras las 6 diferencias de las imágenes que te van a salir en pantalla
               <p>
-                Si no lo adivinas se te notificará mediante mensajes:
+                Debes clickar en la imagen de la derecha donde creas que haya una diferencia respecto a la imágen de la izquierda (la original)
               </p>
-              <p>
-                Un poco mayor -> 10 números más como máximo 
-                </p>
-              <p>
-                Mucho mayor -> 11 números más como mínimo
-              </p>
-              <p>
-                Un poco menor -> 10 números más pequeño como máximo
-              </p>
-              <p>
-                Mucho menor -> 11 números más pequeño como mínimo
-              </p>
-              Dispones de 8 intentos, cuando estas se acaben tendrás
-              que empezar de nuevo. Si ganas te llevaremos a la siguiente sala. 
             </p>
           </div>
         </div>
-        </div>
+      </div>
+      
     </main>
+    <div id="noInicioSesion">
+        No puedes acceder al Escape Room sin antes iniciar sesion
+    </div>
+      
       <script src="../js/room2.js"></script>
-</body>
-</html>
+    </body>
+    </html>
+    
