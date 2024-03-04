@@ -122,8 +122,11 @@ document.getElementById("register").addEventListener("click", () => {
     nuevoUsuario.useremail = useremail.value;
     nuevoUsuario.userpwd = userpwd.value;
     nuevoUsuario.userroom1 = false;
+    nuevoUsuario.timeroom1 = 0;
     nuevoUsuario.userroom2 = false;
+    nuevoUsuario.timeroom2 = 0;
     nuevoUsuario.userroom3 = false;
+    nuevoUsuario.timeroom3 = 0;
 
     if (localStorage.usuarios ) {
       usuarios = JSON.parse(localStorage.getItem("usuarios"));

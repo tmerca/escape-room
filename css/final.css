@@ -1,0 +1,118 @@
+body {
+  background-color: bisque;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+}
+
+header {
+  background-color: burlywood;
+  height: 120px;
+}
+
+#welcome {
+  width: 140px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+header button {
+  margin-top: 35px;
+  background-color: peru !important;
+  border: black solid 2px !important;
+  font-size: 16px !important;
+}
+
+.zoom {
+  transition: transform 0.2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(
+    1.2
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+a:hover,
+a,
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#noInicioSesion {
+  margin: auto;
+  display: none;
+  text-align: center;
+  background-color: #e6b68b;
+  height: 70px;
+  width: 550px;
+  margin-top: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+
+#noInicioSesion p,
+#sinAcceso p {
+  margin-top: 20px;
+}
+
+#sinAcceso {
+  display: none;
+  margin: auto;
+  text-align: center;
+  background-color: #e6b68b;
+  height: 70px;
+  width: 550px;
+  margin-top: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+
+#containerFinal {
+
+  margin: auto;
+  display: none;
+  text-align: center;
+  background-color: #e6b68b;
+  height: 110px;
+  width: 560px;
+  margin-top: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px black solid;
+
+}
+
+#containerFinal p {
+  margin-top: 20px;
+}
+
+button {
+  background-color: peru !important;
+  border: black solid 2px !important;
+  font-size: 16px !important;
+}
+
+#puntuacionFinal {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#puntuacionFinal ul {
+  margin: 40px 0;
+}
+
+.list {
+  display: block;
+}
+
+.userInfo {
+  margin: 10px 0px;
+}

@@ -23,7 +23,7 @@ Dia 12 y 13:
 He empezado al sala 3 (ahorcado), he usado el código existente del proyecto de navidad añadiéndole la funcion de elegir la temática y tambien cambiando la paleta de colores
 
 Dia 19:
-He creado la pagina para editar los datos del cliente, de momento no se como hacer para cambiar los datos del local storage pero el session storage lo tengo controlando
+He creado la pagina para editar los datos del cliente, de momento no se como hacer para cambiar los datos del local storage pero el session storage lo tengo controlado
 
 Dia 20:
 He decidido borrar la sala 2 y esperar a que el profesor explique el mapeo de imágenes para crear un encuentra las diferencias o un buscando a wally
@@ -31,3 +31,14 @@ He decidido borrar la sala 2 y esperar a que el profesor explique el mapeo de im
 Dia 21:
 He empezado de nuevo la sala 2 con un encuentra las 6 diferencias 
 
+Dia 23:
+Juego de las diferencias terminado, me toca cambiar los datos del local storage cuando el usuario actualiza los datos en la pagina edit.html
+
+Dia 26:
+El cliente ya puede actualizar los datos, he añadido las columnas booleanas userroom1, userroom2 y userroom3 en el local/session storage para que asi el cliente pueda continuar su partida donde la dejó
+
+Dia 27:
+El usuario ya puede continuar su partida donde la dejó, tambien he puesto comprobantes a todas las salas para si no ha iniciado sesion o no ha completado la sala anterior no pueda acceder a esta.
+
+Dia 03:
+Ha habido unos dias que no he podido programar, pero ya tengo el nivel base hecho y ahora he puesto que en el ahorcado pueda usar una pista, intentaré poner en las otras salas también

@@ -16,7 +16,7 @@
   <body>
     <header>
       <div class="row">
-        <div class="col-9 mt-4">
+        <div class="col-8 mt-4">
           <h1 class="title"><p>Segunda sala: Encuentra las 6 diferencias</p></h1>
         </div>
         <div class="col-2">
@@ -28,6 +28,9 @@
           <button class="btn btn-primary zoom">
             <a href="../html/index.html">Home</a>
           </button>
+        </div>
+        <div class="col-1 timer">
+          <div id="lahora"></div>
         </div>
       </div>
     </header>
@@ -42,7 +45,7 @@
         <area shape="rect" coords="613,372,632,430" id="img1area1">
         <area shape="rect" coords="116,244,133,272" id="img1area2">
         <area shape="rect" coords="203,402,247,462" id="img1area3">
-        <area shape="rect" coords="370,400,382,420" id="img1area4">
+        <area shape="rect" coords="269,393,283,415" id="img1area4">
         <area shape="rect" coords="523,321,536,337" id="img1area5">
         <area shape="rect" coords="484,416,565,508" id="img1area6">
       </map>
@@ -84,9 +87,15 @@
         </div>
       </div>
       
+
     </main>
     <div id="noInicioSesion">
-        No puedes acceder al Escape Room sin antes iniciar sesion
+        <p>No puedes acceder al Escape Room sin antes iniciar sesion</p>
+    </div>
+    <div id="sinAcceso">
+      <p>
+        Tienes que superar la primera prueba para acceder a esta!
+      </p>
     </div>
       
       <script src="../js/room2.js"></script>

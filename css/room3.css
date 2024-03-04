@@ -242,9 +242,8 @@ body {
 
 #noInicioSesion {
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
+  text-align: center;
   background-color: #e6b68b;
   height: 70px;
   width: 550px;
@@ -252,4 +251,39 @@ body {
   font-weight: bold;
   border-radius: 5px;
   border: 1px black solid;
+}
+
+#noInicioSesion p, #sinAcceso p{
+  margin-top: 20px;
+}
+
+#sinAcceso {
+  display: none;
+  margin: auto;
+  text-align: center;
+  background-color: #e6b68b;
+  height: 70px;
+  width: 550px;
+  margin-top: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+
+#btnPista {
+  display: none;
+}
+
+#lahora {
+  width: 80px;
+  margin-top: 50px !important;
+  background-color: peru !important;
+  border: black solid 2px !important;
+  font-size: 16px !important;
+  border-radius: 5px;
+
+}
+
+.timer {
+  text-align: center;
 }
