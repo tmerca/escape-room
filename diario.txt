@@ -42,3 +42,6 @@ El usuario ya puede continuar su partida donde la dejó, tambien he puesto compr
 
 Dia 03:
 Ha habido unos dias que no he podido programar, pero ya tengo el nivel base hecho y ahora he puesto que en el ahorcado pueda usar una pista, intentaré poner en las otras salas también
+
+Dia 04:
+He puesto cronometro en cada sala, cuando se termina el escape room muestro los datos, tambien he puesto sistema de puntuacion, si el ususario usa pistas o ayudas se sumará menos puntos al finalizar la sala.

@@ -281,9 +281,6 @@ body {
   border: black solid 2px !important;
   font-size: 16px !important;
   border-radius: 5px;
-
-}
-
-.timer {
+  margin-left: 40px !important;
   text-align: center;
 }

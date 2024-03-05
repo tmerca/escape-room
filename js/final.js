@@ -26,7 +26,8 @@ if(!welcome) {
             listaUsuarios.innerHTML += "<li class='userInfo list-group-item'><p><strong>Nombre de usuario: </strong>" + usuarios[i].username + "</p>" +
             "<p><strong>Tiempo en la sala 1:</strong> " + usuarios[i].timeroom1 +" </p>" +
             "<p><strong>Tiempo en la sala 2:</strong> " + usuarios[i].timeroom2 +" </p>" +
-            "<p><strong>Tiempo en la sala 3:</strong> " + usuarios[i].timeroom3 +" </p></li>"
+            "<p><strong>Tiempo en la sala 3:</strong> " + usuarios[i].timeroom3 +" </p>" +
+            "<p><strong>Puntuación:</strong> " + usuarios[i].puntuacion + "</li>"
 
         }
     }

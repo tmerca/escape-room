@@ -127,6 +127,7 @@ document.getElementById("register").addEventListener("click", () => {
     nuevoUsuario.timeroom2 = 0;
     nuevoUsuario.userroom3 = false;
     nuevoUsuario.timeroom3 = 0;
+    nuevoUsuario.puntuacion = 0;
 
     if (localStorage.usuarios ) {
       usuarios = JSON.parse(localStorage.getItem("usuarios"));

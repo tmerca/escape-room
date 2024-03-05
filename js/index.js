@@ -42,10 +42,12 @@ if(welcome){
                         usuarios[i].userroom1 = false;
                         usuarios[i].userroom2 = false;
                         usuarios[i].userroom3 = false;
+                        usuarios[i].puntuacion = 0;
 
                         welcome.userroom1 = false;
                         welcome.userroom2 = false;
                         welcome.userroom3 = false;
+                        welcome.puntuacion = 0;
 
                     }
                 }
@@ -83,10 +85,12 @@ empezarJuego.addEventListener("click", (e) => {
                     usuarios[i].userroom1 = false;
                     usuarios[i].userroom2 = false;
                     usuarios[i].userroom3 = false;
+                    usuarios[i].puntuacion = 0;
 
                     welcome.userroom1 = false;
                     welcome.userroom2 = false;
                     welcome.userroom3 = false;
+                    welcome.puntuacion = 0;
 
                 }
             }

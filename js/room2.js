@@ -89,6 +89,7 @@ function detenerCronometro() {
   let numDiferencias = document.getElementById('numDiferencias');  
   let mapeo1 = document.getElementById("mapeo1");
   let mapeo2 = document.getElementById("mapeo2");
+  let puntuacionPorGanar = 1;
 
   mensaje.style.display = "none";
   nivelDos.style.display = "none";
@@ -217,6 +218,7 @@ function detenerCronometro() {
       // Actualizamos datos del Local Storage y del Session Storage
       welcome.timeroom2 = tiempoDeJuego;
       welcome.userroom2 = true;
+      welcome.puntuacion += puntuacionPorGanar;
       sessionStorage.setItem('usuarios', JSON.stringify(welcome));
       
       //Actualizamos los datos del local Storage
@@ -225,6 +227,7 @@ function detenerCronometro() {
         if(usuarios[i].username == welcome.username) {
           usuarios[i].userroom2 = true;   
           usuarios[i].timeroom2 = tiempoDeJuego;   
+          usuarios[i].puntuacion += puntuacionPorGanar;
         }
       }
   

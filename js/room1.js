@@ -6,7 +6,7 @@ if (!welcome) {
   document.getElementById("juego").style.display = "none";
   console.log("No ha podido ser");
 } else {
-  
+
   document.getElementById("noInicioSesion").style.display = "none";
   
   // CREAMOS EL CRONOMETRO
@@ -41,7 +41,6 @@ if (!welcome) {
   }
 
   actualizarCronometro();
-
 
   // Función para iniciar el cronómetro
   function iniciarCronometro() {
@@ -89,24 +88,39 @@ if (!welcome) {
   let papelCPU = document.getElementById("papelCPU");
   let rocaCPU = document.getElementById("rocaCPU");
   let tijerasCPU = document.getElementById("tijerasCPU");
-  let rutaPapel = "/img/paper.png";
-  let rutaRoca = "/img/rock.png";
-  let rutaTijeras = "/img/scissors.png";
+  let sumarVida = document.getElementById("sumarVida");
+  let puntuacionPorGanar = 1;
+
+  /* EVENTO PARA CUANDO QUIERA SUMAR VIDA */
+  sumarVida.addEventListener('click', (e) => {
+
+    sumarVida.style.display = "none";
+
+    let vidas = parseInt(vidasCliente.innerText);
+    vidas += 1;
+
+    vidasCliente.innerText = vidas;
+
+    puntuacionPorGanar = 0.5;
+
+ })
+
 
   /* EVENTO PARA ELEJIR ENTRE LAS TRES OPCIONES */
   tableroJuego.addEventListener("click", (e) => {
+
     if (e.target.id && e.target.id != "tableroJuego") {
       // LA OPCIÓN QUE PULSE SE PONE EN LA OPCION DEL CLIENTE
       if (e.target.id == "papelCliente") {
-        eleccionCliente.src = rutaPapel;
+        eleccionCliente.src = e.target.src;
       }
 
       if (e.target.id == "rocaCliente") {
-        eleccionCliente.src = rutaRoca;
+        eleccionCliente.src = e.target.src;
       }
 
       if (e.target.id == "tijerasCliente") {
-        eleccionCliente.src = rutaTijeras;
+        eleccionCliente.src = e.target.src;
       }
     }
   });
@@ -123,38 +137,30 @@ if (!welcome) {
     tijerasCPU.style.display = "none";
 
     if (eleccionCliente.src != "") {
+
       botonJugar.style.display = "none";
       var numAleatorio = Math.floor(Math.random() * 3 + 1);
       if (numAleatorio == 1) {
-        eleccionCPU.src = rutaPapel;
+        eleccionCPU.src = "../img/paper.png";
       } else if (numAleatorio == 2) {
-        eleccionCPU.src = rutaRoca;
+        eleccionCPU.src = "../img/rock.png";
       } else {
-        eleccionCPU.src = rutaTijeras;
+        eleccionCPU.src = "../img/scissors.png";
       }
 
       //COMPROBAMOS AMBAS ELECCIONES
 
       // CPU SACA PAPEL
-      if (
-        eleccionCPU.src.endsWith("paper.png") &&
-        eleccionCliente.src.endsWith("paper.png")
-      ) {
+      if (eleccionCPU.src.endsWith("paper.png") && eleccionCliente.src.endsWith("paper.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Empate técnico, nadie pierde vidas!";
         temporizadorParaJugar();
-      } else if (
-        eleccionCPU.src.endsWith("paper.png") &&
-        eleccionCliente.src.endsWith("rock.png")
-      ) {
+      } else if (eleccionCPU.src.endsWith("paper.png") &&eleccionCliente.src.endsWith("rock.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Gana la CPU, pierdes una vida!";
         temporizadorParaJugar();
         vidasCliente.innerText -= 1;
-      } else if (
-        eleccionCPU.src.endsWith("paper.png") &&
-        eleccionCliente.src.endsWith("scissors.png")
-      ) {
+      } else if (eleccionCPU.src.endsWith("paper.png") && eleccionCliente.src.endsWith("scissors.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Ganas el duelo, CPU pierde una vida!";
         temporizadorParaJugar();
@@ -162,25 +168,16 @@ if (!welcome) {
       }
 
       // CPU SACA PIEDRA
-      if (
-        eleccionCPU.src.endsWith("rock.png") &&
-        eleccionCliente.src.endsWith("paper.png")
-      ) {
+      if (eleccionCPU.src.endsWith("rock.png") && eleccionCliente.src.endsWith("paper.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Ganas el duelo, CPU pierde una vida!";
         temporizadorParaJugar();
         vidasCPU.innerText -= 1;
-      } else if (
-        eleccionCPU.src.endsWith("rock.png") &&
-        eleccionCliente.src.endsWith("rock.png")
-      ) {
+      } else if (eleccionCPU.src.endsWith("rock.png") && eleccionCliente.src.endsWith("rock.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Empate técnico, nadie pierde vidas!";
         temporizadorParaJugar();
-      } else if (
-        eleccionCPU.src.endsWith("rock.png") &&
-        eleccionCliente.src.endsWith("scissors.png")
-      ) {
+      } else if (eleccionCPU.src.endsWith("rock.png") && eleccionCliente.src.endsWith("scissors.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Gana la CPU, pierdes una vida!";
         temporizadorParaJugar();
@@ -188,26 +185,17 @@ if (!welcome) {
       }
 
       //CPU SACA TIJERAS
-      if (
-        eleccionCPU.src.endsWith("scissors.png") &&
-        eleccionCliente.src.endsWith("paper.png")
-      ) {
+      if (eleccionCPU.src.endsWith("scissors.png") && eleccionCliente.src.endsWith("paper.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Gana la CPU, pierdes una vida!";
         temporizadorParaJugar();
         vidasCliente.innerText -= 1;
-      } else if (
-        eleccionCPU.src.endsWith("scissors.png") &&
-        eleccionCliente.src.endsWith("rock.png")
-      ) {
+      } else if (eleccionCPU.src.endsWith("scissors.png") && eleccionCliente.src.endsWith("rock.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Ganas el duelo, CPU pierde una vida!";
         temporizadorParaJugar();
         vidasCPU.innerText -= 1;
-      } else if (
-        eleccionCPU.src.endsWith("scissors.png") &&
-        eleccionCliente.src.endsWith("scissors.png")
-      ) {
+      } else if (eleccionCPU.src.endsWith("scissors.png") &&eleccionCliente.src.endsWith("scissors.png")) {
         resultado.style.display = "block";
         resultado.innerText = "Empate técnico, nadie pierde vidas!";
         temporizadorParaJugar();
@@ -275,6 +263,7 @@ if (!welcome) {
       // Actualizamos los datos del session Storage
       welcome.timeroom1 = tiempoDeJuego;
       welcome.userroom1 = true;
+      welcome.puntuacion += puntuacionPorGanar;
       sessionStorage.setItem("usuarios", JSON.stringify(welcome));
 
       //Actualizamos los datos del local Storage
@@ -282,6 +271,7 @@ if (!welcome) {
         if (usuarios[i].username == welcome.username) {
           usuarios[i].userroom1 = true;
           usuarios[i].timeroom1 = tiempoDeJuego;
+          usuarios[i].puntuacion += puntuacionPorGanar;
         }
       }
       localStorage.setItem("usuarios", JSON.stringify(usuarios));

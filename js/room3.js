@@ -8,6 +8,7 @@ if (!welcome) {
   document.getElementById("sinAcceso").style.display = "block";
   document.getElementById("juego").style.display = "none";
 } else {
+
   // JSON CON LAS TEMATICAS POSIBLES
   let JSONTematicas =
     '{"animales" : ["PERRO", "GATO", "ERIZO", "CABALLO", "TIGRE", "CAMALEON"], "frutas" : ["PERA", "MANZANA", "KIWI", "NARANJA", "MANDARINA", "PLATANO"],"deportes" : ["AJEDREZ", "BALONCESTO", "VOLEIBOL", "HOCKEY", "RUGBY", "BADMINTON"]}';
@@ -74,6 +75,7 @@ if (!welcome) {
         clearInterval(intervaloCronometro);
       }
 
+      // MOSTRAMOS EL BOTON PISTA
       btnPista.style.display = "block";
 
       // ESCONDEMOS LOS MENSAJES CUANDO YA HA ELEGIDO TEMATICA
@@ -98,7 +100,6 @@ if (!welcome) {
           tematicas.deportes[
             Math.floor(Math.random() * tematicas.deportes.length)
           ];
-        console.log(palabraAAdivinar);
       }
 
       // JUEGO DEL AHORCADO
@@ -111,8 +112,9 @@ if (!welcome) {
         let letrasFalladas = []; // Letras que falla durante la partida
         let adivinada = true; // Palabra adivinada o no
         let vidas = document.getElementById("intentos");
-        vidas.innerHTML = 5;
+        vidas.innerHTML = 7;
         let letraNoEncontrada = true; // Para comprobar si está en letrasFalladas[]
+        let puntuacionPorGanar = 1;
 
         crearEspacios();
         cambiarEspacios();
@@ -142,6 +144,11 @@ if (!welcome) {
 
         //EVENTO PARA CUANDO PULSE PISTA SE LE PONGA UNA LETRA AL AZAR DE LA PALABRA
         btnPista.addEventListener("click", () => {
+
+          // CAMBIAMOS EL VALOR DE puntuacionPorGanar
+          puntuacionPorGanar = 0.5;
+
+          // ESCONDEMOS EL BOTON PARA QUE SOLO PUEDA USARLO UNA VEZ          
           btnPista.style.display = 'none';
 
           let palabraRandom = Math.floor(
@@ -149,12 +156,8 @@ if (!welcome) {
           );
           let letraPalabraRandom = palabraAAdivinar[palabraRandom];
 
-          console.log(letraPalabraRandom);
-
           // Ocultar el botón correspondiente a la letraPalabraRandom
-          let botonLetra = document.querySelector(
-            `button[value="${letraPalabraRandom}"]`
-          );
+          let botonLetra = document.querySelector(`button[value="${letraPalabraRandom}"]`);
           if (botonLetra) {
             botonLetra.style.display = "none";
           }
@@ -220,6 +223,7 @@ if (!welcome) {
             // Actualizamos datos del Local Storage y del Session Storage
             welcome.timeroom3 = tiempoDeJuego;
             welcome.userroom3 = true;
+            welcome.puntuacion += puntuacionPorGanar;
             sessionStorage.setItem("usuarios", JSON.stringify(welcome));
 
             //Actualizamos los datos del local Storage
@@ -228,6 +232,7 @@ if (!welcome) {
               if (usuarios[i].username == welcome.username) {
                 usuarios[i].userroom3 = true;
                 usuarios[i].timeroom3 = tiempoDeJuego;
+                usuarios[i].puntuacion += puntuacionPorGanar;
               }
             }
             localStorage.setItem("usuarios", JSON.stringify(usuarios));

@@ -140,9 +140,13 @@ if (!welcome) {
       nuevoUsuario.username = username.value;
       nuevoUsuario.useremail = useremail.value;
       nuevoUsuario.userpwd = userpwd.value;
-      nuevoUsuario.userroom1 = userroom1.value;
-      nuevoUsuario.userroom2 = userroom2.value;
-      nuevoUsuario.userroom3 = userroom3.value;
+      nuevoUsuario.userroom1 = welcome.userroom1;
+      nuevoUsuario.userroom2 = welcome.userroom2;
+      nuevoUsuario.userroom3 = welcome.userroom3;
+      nuevoUsuario.timeroom1 = welcome.timeroom1;
+      nuevoUsuario.timeroom2 = welcome.timeroom2;
+      nuevoUsuario.timeroom3 = welcome.timeroom3;
+      nuevoUsuario.puntuacion = welcome.puntuacion;
 
       // Actualizamos los datos del session Storage
       sessionStorage.setItem('usuarios', JSON.stringify(nuevoUsuario));
@@ -159,6 +163,8 @@ if (!welcome) {
       }
       localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
+
+      // SI LOS DATOS SE HAN CAMBIADO MOSTRAMOS EL MENSAJE Y LO LLEVAMOS AL MENU PRINCIPAL
       if(datosCambiados) {
         document.getElementById('requisitos').style.display = 'none';
         document.getElementById('datosCambiados').innerText = "Tus datos han sido cambiados con éxito, llevándote al menú principal...";

@@ -28,6 +28,10 @@ header {
   border-radius: 5px;
 }
 
+.gameInformation p {
+  text-align: center;
+}
+
 header button {
   margin-top: 35px;
   background-color: peru !important;
