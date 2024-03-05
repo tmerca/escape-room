@@ -45,3 +45,6 @@ Ha habido unos dias que no he podido programar, pero ya tengo el nivel base hech
 
 Dia 04:
 He puesto cronometro en cada sala, cuando se termina el escape room muestro los datos, tambien he puesto sistema de puntuacion, si el ususario usa pistas o ayudas se sumará menos puntos al finalizar la sala.
+
+05:
+Último dia, he arreglado los problemas con las imagenes de la sala 1 que tenía y he puesto el sistema de puntuacion al escape room.
