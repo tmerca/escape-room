@@ -15,7 +15,7 @@ login.addEventListener('click', () => {
                 userFound = true;
                 // Cambiamos el usuario del Session storage
                 sessionStorage.setItem('usuarios', JSON.stringify(usuarios[i]));
-                window.location.href = "../html/index.html";
+                window.location.href = "../index.html";
                 break;
             }
         }

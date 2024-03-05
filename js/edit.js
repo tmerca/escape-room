@@ -170,7 +170,7 @@ if (!welcome) {
         document.getElementById('datosCambiados').innerText = "Tus datos han sido cambiados con éxito, llevándote al menú principal...";
 
         setTimeout(() => {
-          window.location.href = "../html/index.html";
+          window.location.href = "../index.html";
         }, 2000);
 
       }

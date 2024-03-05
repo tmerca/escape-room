@@ -250,7 +250,7 @@ if (!welcome) {
       // MENSAJE DE QUE HA PERDIDO Y LO LLEVAMOS AL MENU
       resultado.innerText = "Has perdido :( , redirigiéndote al menú principal...";
       setTimeout(() => {
-        window.location.href = "../html/index.html";
+        window.location.href = "../index.html";
       }, 3000);
 
     } else if (vidasCPU.innerText == 0) {

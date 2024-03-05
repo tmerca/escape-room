@@ -136,7 +136,7 @@ document.getElementById("register").addEventListener("click", () => {
     }
     usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    window.location.href = "../html/index.html";
+    window.location.href = "../index.html";
 
     //Cambiamos/Creamos el usuario de Session storage
     sessionStorage.setItem("usuarios", JSON.stringify(nuevoUsuario));

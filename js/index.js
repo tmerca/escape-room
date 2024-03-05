@@ -72,7 +72,7 @@ empezarJuego.addEventListener("click", (e) => {
     if(loggedIn == false) {
         noLogin.innerText = "Inicia sesión para empezar juego!";
         setTimeout(() => {
-            window.location.href = "../html/index.html";
+            window.location.href = "../index.html";
         }, 2000);
     } else {
         window.location.href = "../html/room1.html";
